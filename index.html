@@ -1038,9 +1038,17 @@ html&gt;body{padding:0}&lt;/style&gt;
 &lt;div id=&quot;relationship-review&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;
   &lt;style&gt;
     #relationship-review { color:var(--foreground); }
-    #relationship-review .intro { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px; }
+    #relationship-review .intro { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:8px; }
     #relationship-review .intro h2 { margin:0; }
     #relationship-review .meta { display:flex; gap:10px; align-items:center; flex-wrap:wrap; color:var(--muted-foreground); }
+    #relationship-review .start-here { margin:18px 0 8px; }
+    #relationship-review .start-here h3 { margin:0 0 10px; }
+    #relationship-review .start-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+    #relationship-review .start-card { text-align:right; display:grid; gap:8px; }
+    #relationship-review .start-card .text-small { color:var(--muted-foreground); }
+    #relationship-review .topic-nav { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 4px; }
+    #relationship-review .topic-nav button { white-space:nowrap; }
+    #relationship-review .section-kicker { margin:20px 0 0; color:var(--muted-foreground); }
     #relationship-review .panel-content { padding-top:22px; }
     #relationship-review .topic-head { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin:20px 0; }
     #relationship-review .topic-head h3 { margin:0; }
@@ -1088,6 +1096,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     #relationship-review [hidden] { display:none !important; }
     @media(max-width:520px) {
       #relationship-review .branches { grid-template-columns:minmax(0,1fr); gap:22px; }
+      #relationship-review .start-grid { grid-template-columns:minmax(0,1fr); }
       #relationship-review .merge { gap:0; }
       #relationship-review .merge span:last-child { display:none; }
       #relationship-review .event-lines div, #relationship-review .criterion-line { grid-template-columns:minmax(0,1fr); gap:6px; }
@@ -1099,6 +1108,20 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;h2&gt;خريطة التجربة&lt;/h2&gt;
     &lt;span class=&quot;text-small meta&quot;&gt;المواقف ← التفسير ← الدرس&lt;/span&gt;
   &lt;/div&gt;
+  &lt;section class=&quot;start-here&quot; aria-labelledby=&quot;rr-start-title&quot;&gt;
+    &lt;h3 id=&quot;rr-start-title&quot;&gt;ابدأ من النقطة التي تهمك&lt;/h3&gt;
+    &lt;div class=&quot;start-grid&quot;&gt;
+      &lt;button class=&quot;btn start-card&quot; type=&quot;button&quot; data-start-tab=&quot;rr-map-tab&quot; data-start-topic=&quot;visits&quot;&gt;
+        &lt;strong&gt;فهم موقف محدد&lt;/strong&gt;&lt;span class=&quot;text-small&quot;&gt;افصل الوقائع عن التفسير، ثم راجع ما بقي غير محسوم.&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button class=&quot;btn start-card&quot; type=&quot;button&quot; data-start-tab=&quot;rr-timeline-tab&quot;&gt;
+        &lt;strong&gt;راجع تغيّر الصورة&lt;/strong&gt;&lt;span class=&quot;text-small&quot;&gt;شاهد كيف غيّرت التوضيحات المتأخرة بعض الاستنتاجات.&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button class=&quot;btn start-card&quot; type=&quot;button&quot; data-start-tab=&quot;rr-criteria-tab&quot; data-start-criterion=&quot;safety&quot;&gt;
+        &lt;strong&gt;استخلص قرارًا للمستقبل&lt;/strong&gt;&lt;span class=&quot;text-small&quot;&gt;حوّل التجربة إلى أسئلة وفحوص عملية بدل قواعد عامة.&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
   &lt;div class=&quot;nav nav-pills&quot; role=&quot;tablist&quot; aria-label=&quot;محاور مراجعة المحادثة&quot;&gt;
     &lt;button class=&quot;nav-link active&quot; id=&quot;rr-map-tab&quot; type=&quot;button&quot; role=&quot;tab&quot; aria-controls=&quot;rr-map&quot; aria-selected=&quot;true&quot;&gt;المواقف والدروس&lt;/button&gt;
     &lt;button class=&quot;nav-link&quot; id=&quot;rr-timeline-tab&quot; type=&quot;button&quot; role=&quot;tab&quot; aria-controls=&quot;rr-timeline&quot; aria-selected=&quot;false&quot;&gt;تغيّر الصورة&lt;/button&gt;
@@ -1106,6 +1129,7 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;/div&gt;
 
   &lt;section id=&quot;rr-map&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;rr-map-tab&quot; class=&quot;panel-content&quot;&gt;
+    &lt;div class=&quot;section-kicker text-small&quot;&gt;اختر موضوعًا ثم اقرأ الأعمدة بالترتيب: ما رويته، ما استنتجه كلود، ثم ما يمكن قوله بدقة.&lt;/div&gt;
     &lt;div class=&quot;viz-controls&quot;&gt;
       &lt;label class=&quot;form-label&quot; for=&quot;rr-topic&quot;&gt;الموقف
         &lt;select class=&quot;form-select&quot; id=&quot;rr-topic&quot;&gt;
@@ -1125,6 +1149,13 @@ html&gt;body{padding:0}&lt;/style&gt;
           &lt;option value=&quot;generalization&quot;&gt;١٤ · تعميم الدروس على البنات&lt;/option&gt;
         &lt;/select&gt;
       &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;topic-nav&quot; aria-label=&quot;اختصارات المواضيع الأكثر ارتباطًا بالخلاف&quot;&gt;
+      &lt;button class=&quot;btn btn-ghost&quot; type=&quot;button&quot; data-topic=&quot;visits&quot;&gt;الزيارات&lt;/button&gt;
+      &lt;button class=&quot;btn btn-ghost&quot; type=&quot;button&quot; data-topic=&quot;family&quot;&gt;تدخل الأم&lt;/button&gt;
+      &lt;button class=&quot;btn btn-ghost&quot; type=&quot;button&quot; data-topic=&quot;conflict&quot;&gt;الخلاف&lt;/button&gt;
+      &lt;button class=&quot;btn btn-ghost&quot; type=&quot;button&quot; data-topic=&quot;weapon&quot;&gt;الأمان&lt;/button&gt;
+      &lt;button class=&quot;btn btn-ghost&quot; type=&quot;button&quot; data-topic=&quot;status&quot;&gt;الوضع الحالي&lt;/button&gt;
     &lt;/div&gt;
     &lt;div class=&quot;topic-head&quot;&gt;&lt;h3 id=&quot;rr-topic-title&quot;&gt;زيارة الأهل والمبيت&lt;/h3&gt;&lt;span class=&quot;viz-badge&quot; id=&quot;rr-category&quot;&gt;اتفاقات وحدود&lt;/span&gt;&lt;/div&gt;
     &lt;div id=&quot;rr-detail&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot;&gt;
@@ -1216,12 +1247,12 @@ html&gt;body{padding:0}&lt;/style&gt;
 (() =&gt; {
   const root = document.getElementById(&#x27;relationship-review&#x27;);
   const topics = {
-    visits:{title:&#x27;زيارة الأهل والمبيت&#x27;,category:&#x27;اتفاقات وحدود&#x27;,facts:[&#x27;أهلها على بُعد نحو ٧٠–٨٠ كم؛ الزيارات تحتاج وقتًا وترتيبًا.&#x27;,&#x27;أمها كانت تزوركم وتبيت؛ وأنت كنت توصل زوجتك أحيانًا.&#x27;,&#x27;ذكرت لاحقًا معدل زيارة يقارب مرة شهريًا، مع اعتراضك على المبيت المعتاد.&#x27;],claude:[&#x27;بدأ باعتبار موقفك منعًا لصلة الرحم.&#x27;,&#x27;بعد التوضيح أقرّ بوجود زيارات، ثم جزم بأنها تشعر بالاختناق وعدم الإنصاف.&#x27;],verdict:&#x27;المعطيات لا تصف منعًا كاملًا من الأهل؛ الخلاف شمل المبيت والسفر وشروط الزيارة.&#x27;,unknown:&#x27;غير محسوم: الاتفاق الأصلي، ومدى ملاءمة الترتيب للطرفين.&#x27;,lesson:&#x27;اتفاق منفصل على الزيارة، والمرافقة، والمبيت، والاستثناءات؛ مع مراجعة الترتيب عند تغير الظروف.&#x27;,question:&#x27;هل كان الخلاف على رؤية الأهل نفسها، أم على المبيت وطريقة السفر؟&#x27;},
+    visits:{title:&#x27;زيارة الأهل والمبيت&#x27;,category:&#x27;اتفاقات وحدود&#x27;,facts:[&#x27;أهلها على بُعد نحو ٧٠–٨٠ كم؛ الزيارات تحتاج وقتًا وترتيبًا.&#x27;,&#x27;أمها كانت تزوركم وتبيت؛ وأنت كنت توصل زوجتك أحيانًا، وتكلمت مع أخيها أحمد ليأخذها.&#x27;,&#x27;بحسب توضيحك الأخير: كانت تصر أن تتولى أنت الذهاب والعودة، وأن تكون الزيارة للأم فقط دون الأب القريب منها، رغم ضيق وقتك.&#x27;],claude:[&#x27;بدأ باعتبار موقفك منعًا لصلة الرحم.&#x27;,&#x27;بعد التوضيح أقرّ بوجود زيارات، ثم جزم بأنها تشعر بالاختناق وعدم الإنصاف.&#x27;],verdict:&#x27;المعطيات لا تصف منعًا كاملًا من الأهل. وفّرت بدائل للزيارة، بينما كان الخلاف على وسيلة التوصيل، والمبيت، وزيارة الأم دون الأب. هذا يغيّر وزن الاستنتاج بأنك كنت تقطع الصلة.&#x27;,unknown:&#x27;غير محسوم: هل كانت البدائل متاحة عمليًا في كل مرة؟ وهل كان هناك ترتيب متفق عليه لزيارة الأب أو سبب محدد لرفضها؟&#x27;,lesson:&#x27;في الزواج القادم: اتفقا مسبقًا على من يوصّل عند انشغالك، وأوقات الزيارة، وحق كل طرف في صلة أهله دون تحويل أحد الوالدين إلى خصم.&#x27;,question:&#x27;هل كانت ترفض زيارة الأب من موقف شخصي منها، أم خوفًا من رد فعل الأم، أم لسبب آخر لم يُناقش بينكما؟&#x27;},
     movement:{title:&#x27;الخروج والمرافقة&#x27;,category:&#x27;ثقة وأمان&#x27;,facts:[&#x27;اشترطت في البداية مرافقتها للجيم القريب وبعض المشاوير.&#x27;,&#x27;ربطت ذلك بالخوف عليها، وطرحت احتمال رغبتها في الاختلاط.&#x27;,&#x27;وضّحت لاحقًا أنها أصبحت تذهب للجيم وتشتري وحدها.&#x27;],claude:[&#x27;جزم بأن المرافقة سبب اختناقها وأن الخوف مجرد غطاء للتحكم.&#x27;,&#x27;اعتبر السماح اللاحق حرية وصلت متأخرة ومتسممة.&#x27;],verdict:&#x27;الاشتراط قد يضيّق حركتها، لكن أثره وسبب تغييره يحتاجان سياقًا. رغبتها في الخروج وحدها ليست دليلًا على سوء نية.&#x27;,unknown:&#x27;غير محسوم: مخاطر الطريق، والاتفاق بينكما، وما تغير فعليًا بعد السماح.&#x27;,lesson:&#x27;قيّم خطر المشوار نفسه، وافصل عرض المساعدة عن إلزام المرافقة؛ دون اتهام للنوايا.&#x27;,question:&#x27;ما الخطر المحدد، وما الترتيب المتناسب معه الذي يقبله الطرفان؟&#x27;},
     conflict:{title:&#x27;الزعيق وطلب التهدئة&#x27;,category:&#x27;إدارة خلاف&#x27;,facts:[&#x27;قلت إنك تطلب مهلة من أول بادرة خلاف، وأحيانًا تخرج لتهدأ.&#x27;,&#x27;بحسب روايتك، كانت تستمر في الصراخ ولا تحترم المهلة.&#x27;,&#x27;اعترفت بأنك قد تنفعل في النهاية ويعلو صوتك.&#x27;],claude:[&#x27;افترض أولًا أنك تؤخر المهلة أو تستخدم نبرة متعالية.&#x27;,&#x27;تراجع بعد التصحيح، لكنه جزم بتفسير نفسي لسلوكها.&#x27;],verdict:&#x27;طلب المهلة المبكر خطوة مفيدة. رفض المهلة والزعيق يحتاجان تقييمًا مستقلًا لكل طرف؛ النية والنبرة لا تُستنتجان من النص وحده.&#x27;,unknown:&#x27;غير محسوم: موعد العودة للحوار، وما يحدث بعد العودة، وتكرار كل سلوك.&#x27;,lesson:&#x27;اتفاق على مهلة واضحة وعودة محددة، دون مطاردة أو إهانة أو تخويف من أي طرف.&#x27;,question:&#x27;هل كانت المهلة تنتهي بحوار وحل، أم كان الخلاف يستأنف بنفس الصورة؟&#x27;},
     weapon:{title:&#x27;التهديد بالسكينة&#x27;,category:&#x27;سلامة&#x27;,facts:[&#x27;ذكرت رفع سكينة والتهديد بإيذائك أثناء محاولة الخروج.&#x27;,&#x27;وضّحت أنها لم تحاول طعنك، وأنك أخذتها منها بهدوء وكانت تبكي.&#x27;],claude:[&#x27;أخذ التهديد بجدية أولًا.&#x27;,&#x27;بعد التوضيح جزم بأنه انهيار ويأس، واستدل بالبكاء على طيبتها.&#x27;,&#x27;كرر الحث على ستر الواقعة.&#x27;],verdict:&#x27;التهديد بالسلاح مؤذٍ وخطير حتى دون إصابة. البكاء وعدم محاولة الطعن لا يثبتان النية ولا يضمنان الأمان.&#x27;,unknown:&#x27;غير محسوم: تفاصيل الخطر واحتمال تكراره؛ لا يمكن تقديرهما من هذا الحوار وحده.&#x27;,lesson:&#x27;الأمان أولًا؛ الاستعانة بشخص موثوق أو مختص والإفصاح اللازم للحماية يختلف عن التشهير.&#x27;,question:&#x27;ما الترتيب الذي يحميك من تكرار موقف خطر، مستقلًا عن أي قرار بالرجوع؟&#x27;},
     care:{title:&#x27;طلب المساعدة النفسية&#x27;,category:&#x27;احتياج ومسؤولية&#x27;,facts:[&#x27;قلت إنها سبق أن راجعت طبيبًا نفسيًا وطلبت مساعدة مجددًا.&#x27;,&#x27;ذكرت قلقك من تكلفة العلاج ووقت التوصيل.&#x27;],claude:[&#x27;جزم بجرح هجر وبأن العلاج كان يمكن أن ينقذ البيت.&#x27;,&#x27;حمّل قرار عدم العلاج وزنًا سببيًا كبيرًا دون تقييم مباشر.&#x27;],verdict:&#x27;طلب المساعدة يستحق الجدية. لا نعرف التشخيص، ولا نستطيع ضمان أن العلاج كان سيمنع الانفصال.&#x27;,unknown:&#x27;غير محسوم: نوع العلاج السابق، مدته، سبب توقفه، والبدائل التي كانت متاحة.&#x27;,lesson:&#x27;بحث دعم مناسب للإمكانات مع مختص؛ الزوج شريك داعم وليس بديلًا عن العلاج أو ضامنًا لنجاحه.&#x27;,question:&#x27;ما الدعم الذي طُلب تحديدًا، وما الخيارات الواقعية التي كانت متاحة؟&#x27;},
-    family:{title:&#x27;تدخل الأم وخلاف الوالدين&#x27;,category:&#x27;حدود الأسرة&#x27;,facts:[&#x27;بحسب روايتك، أمها كانت تضغط بخصوص المبيت وتحكي لها خلافاتها.&#x27;,&#x27;طلبت من أمها عدم تحميلها هذه المشاكل.&#x27;,&#x27;ذكرت طلب زوجتك أن تصطف مع أمها ضد أبيها.&#x27;],claude:[&#x27;أقر بالتدخل، ثم جزم بأنه زرع فيها جرحًا ومشروع انتقام.&#x27;,&#x27;افترض أن تغيير نظامك كان سيعطل أثر تدخل الأم.&#x27;],verdict:&#x27;الضغط للاصطفاف ونقل الخلافات قد يؤذيان الزواج. لا نعرف تاريخ نزاع الوالدين أو مسؤولية كل طرف فيه.&#x27;,unknown:&#x27;غير محسوم: سبب غضبها من أبيها، وما نُقل حرفيًا، وحدود التدخل الفعلية.&#x27;,lesson:&#x27;حدود مع الأسرتين؛ دعم صلة الرحم دون تبني خصومات الآخرين، مع إتاحة طلب المساعدة عند الضرر.&#x27;,question:&#x27;هل كانت تستطيع اتخاذ قرار يخص بيتكما دون خوف من رفض أمها؟&#x27;},
+    family:{title:&#x27;تدخل الأم وخلاف الوالدين&#x27;,category:&#x27;حدود الأسرة&#x27;,facts:[&#x27;بحسب روايتك، أمها كانت تضغط بخصوص المبيت وتحكي لها خلافاتها.&#x27;,&#x27;طلبت من أمها عدم تحميلها هذه المشاكل.&#x27;,&#x27;ذكرت طلب زوجتك أن تصطف مع أمها ضد أبيها، وأن الزيارة المطلوبة كانت للأم وحدها رغم قرب الأب.&#x27;],claude:[&#x27;أقر بالتدخل، ثم جزم بأنه زرع فيها جرحًا ومشروع انتقام.&#x27;,&#x27;افترض أن تغيير نظامك كان سيعطل أثر تدخل الأم.&#x27;],verdict:&#x27;تدخل الأم وضغطها على ابنتها قد يكون عاملًا كبيرًا، خصوصًا إذا حوّل زيارات الأهل إلى اصطفاف ضد الأب. لكنه لا يثبت وحده أنها «تسيطر على البيت»؛ ذلك يحتاج أمثلة على قرارات بيتكما التي فُرضت فعليًا بسببها.&#x27;,unknown:&#x27;غير محسوم: ما القرار المحدد في بيتكما الذي تغير فقط لأن الأم أرادته؟ وما الذي نُقل حرفيًا؟&#x27;,lesson:&#x27;حدود ثابتة مع الأسرتين: لا تستعمل الزوجة مشاكل والديها في إدارة بيتها، ولا يُطلب من الزوج أن يختار طرفًا في خصوماتهم.&#x27;,question:&#x27;ما أمثلة القرارات التي اتخذتها زوجتك في بيتكما ضد اتفاقكما بسبب طلب مباشر من أمها؟&#x27;},
     privacy:{title:&#x27;تفتيش الهاتف والشك&#x27;,category:&#x27;ثقة وخصوصية&#x27;,facts:[&#x27;ذكرت أنها كانت تفتش هاتفك وتطلب تفاصيل تحركاتك.&#x27;,&#x27;ذكرت أنت خوفك من الخيانة واستشهدت بقصص منتشرة على الإنترنت.&#x27;],claude:[&#x27;فسّر سلوكها برعب الهجر وسلوكك باضطراب القلق.&#x27;,&#x27;استخدم أعدادًا وقصصًا غير متحققة لتقدير مدى انتشار الخيانة.&#x27;],verdict:&#x27;الرقابة والاتهام بلا دليل يستحقان المراجعة من الطرفين. القصص لا تكفي لإثبات نية شخص أو تقدير نسبة انتشار ظاهرة.&#x27;,unknown:&#x27;غير محسوم: وجود وقائع محددة أضرّت بالثقة، أو اتفاق سابق حول الخصوصية.&#x27;,lesson:&#x27;اتفاق متبادل على الخصوصية والتواصل؛ التعامل مع الوقائع بدل التحقيق الدائم أو الظنون.&#x27;,question:&#x27;أي طلب للاطمئنان متبادل ومقبول، وأي طلب يتحول إلى مراقبة؟&#x27;},
     time:{title:&#x27;الشغل والوقت والاتفاقات&#x27;,category:&#x27;توافق يومي&#x27;,facts:[&#x27;كنت تبني شركة وتعمل نحو ١٠–١٢ ساعة يوميًا.&#x27;,&#x27;قلت إنك أعلنت ضغط العمل والسكن في محافظة أخرى قبل الزواج.&#x27;,&#x27;ذكرت قعدات مشتركة وخروجات محلية وقربًا بينكما.&#x27;],claude:[&#x27;افترض أولًا أنك لم تخصص وقتًا للبيت وأنها تعيش وحدها طوال الوقت.&#x27;,&#x27;بعد التوضيح أقر بالإعلان المسبق، مع استمرار الجزم بالتوقيت الخاطئ.&#x27;],verdict:&#x27;وضوحك المسبق يُحسب لك. قبولها الأول لا يضمن أن الترتيب سيظل مريحًا؛ وجود وقت مشترك يحتاج وصفًا واقعيًا.&#x27;,unknown:&#x27;غير محسوم: مقدار الوقت وجودته، واحتياجات كل طرف، وما جُرّب لتعديل الجدول.&#x27;,lesson:&#x27;اتفاق على وقت مشترك قابل للتنفيذ، ومراجعة الاحتياجات بدل الاعتماد على موافقة عامة قديمة.&#x27;,question:&#x27;كيف يبدو أسبوع عادي فيه شغل وبيت وأهل وراحة لكل واحد؟&#x27;},
     spending:{title:&#x27;المصاريف والمقارنات&#x27;,category:&#x27;احتياجات وميزانية&#x27;,facts:[&#x27;شكوت من المقارنة بالصديقات والبلوجرز وكثرة طلبات الشراء والفسح.&#x27;,&#x27;قلت إنك تعرض بدائل قريبة تناسب الوقت والميزانية.&#x27;,&#x27;عرضت رحلة كمكافأة على مراجعة القرآن؛ ففهمتها هي كمساومة.&#x27;],claude:[&#x27;قلب طرفي طلب الفسح أولًا، ثم عدّل فهمه.&#x27;,&#x27;فسّر الشراء بجوع عاطفي وشراء قهري دون معلومات كافية.&#x27;],verdict:&#x27;المقارنات قد تكون جارحة، لكن طلب الشراء وحده لا يثبت اضطرابًا أو دافعًا عاطفيًا محددًا. النية الطيبة للمكافأة لا تضمن تقبّلها.&#x27;,unknown:&#x27;غير محسوم: الميزانية، وتكرار الطلبات، وما هو أساسي أو اختياري، وتاريخ الوعود.&#x27;,lesson:&#x27;ميزانية معلنة ومساحة للترفيه؛ فصل الاحتياجات الأساسية والعطاء العادي عن المكافآت الاختيارية.&#x27;,question:&#x27;ما الطلب الذي تجاوز القدرة فعلًا، وكيف اتفقتما على الأولويات؟&#x27;},
@@ -1251,6 +1282,21 @@ html&gt;body{padding:0}&lt;/style&gt;
     const target=el(id); target.replaceChildren();
     items.forEach(text=&gt;{const li=document.createElement(&#x27;li&#x27;);li.textContent=text;target.appendChild(li);});
   };
+  const activateTab = id =&gt; {
+    const button=el(id);
+    button.click();
+    button.focus();
+  };
+  root.querySelectorAll(&#x27;[data-start-tab]&#x27;).forEach(button=&gt;button.addEventListener(&#x27;click&#x27;,()=&gt;{
+    activateTab(button.dataset.startTab);
+    if(button.dataset.startTopic){ el(&#x27;rr-topic&#x27;).value=button.dataset.startTopic; el(&#x27;rr-topic&#x27;).dispatchEvent(new Event(&#x27;change&#x27;)); }
+    if(button.dataset.startCriterion){ el(&#x27;rr-criterion&#x27;).value=button.dataset.startCriterion; el(&#x27;rr-criterion&#x27;).dispatchEvent(new Event(&#x27;change&#x27;)); }
+  }));
+  root.querySelectorAll(&#x27;[data-topic]&#x27;).forEach(button=&gt;button.addEventListener(&#x27;click&#x27;,()=&gt;{
+    el(&#x27;rr-topic&#x27;).value=button.dataset.topic;
+    el(&#x27;rr-topic&#x27;).dispatchEvent(new Event(&#x27;change&#x27;));
+    el(&#x27;rr-topic&#x27;).focus();
+  }));
   el(&#x27;rr-topic&#x27;).addEventListener(&#x27;change&#x27;,event=&gt;{
     const t=topics[event.target.value];
     setText(&#x27;rr-topic-title&#x27;,t.title);setText(&#x27;rr-category&#x27;,t.category);
