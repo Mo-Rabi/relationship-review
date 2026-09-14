@@ -1037,6 +1037,7 @@ html&gt;body{padding:0}&lt;/style&gt;
 &lt;body&gt;
 &lt;div id=&quot;relationship-review&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;
   &lt;style&gt;
+    @import url(&#x27;https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;700;800&amp;family=Reem+Kufi+Fun:wght@500;600;700&amp;display=swap&#x27;);
     #relationship-review { color:var(--foreground); }
     #relationship-review .intro { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:8px; }
     #relationship-review .intro h2 { margin:0; }
@@ -1102,6 +1103,66 @@ html&gt;body{padding:0}&lt;/style&gt;
       #relationship-review .event-lines div, #relationship-review .criterion-line { grid-template-columns:minmax(0,1fr); gap:6px; }
       #relationship-review .intro { align-items:flex-start; }
     }
+
+    #relationship-review {
+      --rr-ink: oklch(23% .025 38);
+      --rr-paper: oklch(96% .018 88);
+      --rr-ruby: oklch(49% .17 27);
+      --rr-ochre: oklch(72% .13 72);
+      --rr-moss: oklch(44% .075 145);
+      position:relative; overflow:hidden; max-width:1040px; margin-inline:auto;
+      padding:clamp(20px,4vw,58px); color:var(--rr-ink); background:var(--rr-paper);
+      font-family:&#x27;Noto Kufi Arabic&#x27;, sans-serif; isolation:isolate;
+    }
+    #relationship-review::before { content:&quot;&quot;; position:absolute; z-index:-1; inset:0; opacity:.42; background-image:radial-gradient(oklch(23% .025 38 / .12) .65px, transparent .8px); background-size:7px 7px; }
+    #relationship-review::after { content:&quot;&quot;; position:absolute; z-index:-1; width:43vw; height:43vw; max-width:540px; max-height:540px; border:2px solid oklch(49% .17 27 / .28); border-radius:50%; left:-22vw; top:-11vw; }
+    #relationship-review .intro { position:relative; display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:end; gap:28px; padding:10px 0 28px; border-bottom:2px solid var(--rr-ink); }
+    #relationship-review .intro::before { content:&quot;مذكرة قراءة&quot;; align-self:start; color:var(--rr-ruby); font-size:.78rem; font-weight:800; letter-spacing:.12em; }
+    #relationship-review .intro h2 { font-family:&#x27;Reem Kufi Fun&#x27;, sans-serif; color:var(--rr-ink); font-size:clamp(3.6rem,10vw,7.5rem); line-height:.75; letter-spacing:-.06em; transform:translateY(9px); }
+    #relationship-review .intro h2::after { content:&quot;.&quot;; color:var(--rr-ruby); }
+    #relationship-review .meta { max-width:13rem; padding-bottom:8px; color:var(--rr-moss); font-size:.78rem; font-weight:800; line-height:1.8; }
+    #relationship-review .start-here { margin:0; padding:28px 0 34px; border-bottom:1px solid oklch(23% .025 38 / .28); }
+    #relationship-review .start-here h3 { font-family:&#x27;Reem Kufi Fun&#x27;, sans-serif; font-size:clamp(1.6rem,3vw,2.3rem); font-weight:600; margin:0 0 18px; }
+    #relationship-review .start-grid { grid-template-columns:1.35fr 1fr 1fr; gap:0; border-top:1px solid oklch(23% .025 38 / .35); border-bottom:1px solid oklch(23% .025 38 / .35); }
+    #relationship-review .start-card { position:relative; min-height:152px; padding:22px 18px 18px; border:0; border-radius:0; background:transparent; color:var(--rr-ink); box-shadow:none; transition:background .35s ease, transform .35s cubic-bezier(.16,1,.3,1); }
+    #relationship-review .start-card + .start-card { border-inline-start:1px solid oklch(23% .025 38 / .35); }
+    #relationship-review .start-card::before { display:block; margin-bottom:11px; color:var(--rr-ruby); font-family:&#x27;Reem Kufi Fun&#x27;,sans-serif; font-size:1.4rem; }
+    #relationship-review .start-card:nth-child(1)::before { content:&quot;01&quot;; } #relationship-review .start-card:nth-child(2)::before { content:&quot;02&quot;; } #relationship-review .start-card:nth-child(3)::before { content:&quot;03&quot;; }
+    #relationship-review .start-card strong { font-size:1rem; } #relationship-review .start-card .text-small { color:oklch(35% .025 38); font-size:.72rem; line-height:1.8; }
+    #relationship-review .start-card:hover, #relationship-review .start-card:focus-visible { background:var(--rr-ink); color:var(--rr-paper); outline:none; transform:translateY(-5px); }
+    #relationship-review .start-card:hover .text-small, #relationship-review .start-card:focus-visible .text-small { color:oklch(91% .018 88); }
+    #relationship-review .nav.nav-pills { position:sticky; top:0; z-index:4; margin:0 -4px; padding:18px 4px 10px; background:color-mix(in oklch,var(--rr-paper) 92%,transparent); backdrop-filter:blur(8px); border-bottom:1px solid oklch(23% .025 38 / .22); }
+    #relationship-review .nav.nav-pills .nav-link { border-radius:999px; color:var(--rr-ink); font-weight:800; font-size:.76rem; }
+    #relationship-review .nav.nav-pills .nav-link.active { background:var(--rr-ruby); color:var(--rr-paper); }
+    #relationship-review .panel-content { padding-top:32px; animation:rr-rise .55s cubic-bezier(.16,1,.3,1) both; }
+    #relationship-review .section-kicker { max-width:68ch; margin:0 0 22px; color:var(--rr-moss); font-weight:700; line-height:2; }
+    #relationship-review .viz-controls { padding:16px; background:oklch(88% .055 78 / .44); border:1px solid oklch(23% .025 38 / .18); }
+    #relationship-review .form-select { min-height:48px; border-radius:0; border-color:var(--rr-ink); background:var(--rr-paper); color:var(--rr-ink); font-family:inherit; font-weight:700; }
+    #relationship-review .topic-nav { gap:6px; margin:18px 0; }
+    #relationship-review .topic-nav .btn { border-radius:999px; color:var(--rr-moss); font-size:.72rem; font-weight:800; }
+    #relationship-review .topic-nav .btn:hover, #relationship-review .topic-nav .btn:focus-visible { background:var(--rr-moss); color:var(--rr-paper); }
+    #relationship-review .topic-head { margin:38px 0 24px; align-items:baseline; }
+    #relationship-review .topic-head h3 { font-family:&#x27;Reem Kufi Fun&#x27;,sans-serif; font-size:clamp(2rem,5vw,3.7rem); font-weight:600; line-height:.9; }
+    #relationship-review .viz-badge { border-radius:0; background:var(--rr-ochre); color:var(--rr-ink); font-weight:800; transform:rotate(-2deg); }
+    #relationship-review .branches { gap:0; border-top:2px solid var(--rr-ink); }
+    #relationship-review .branch { padding:24px 20px 28px; }
+    #relationship-review .branch + .branch { border-inline-start:1px solid oklch(23% .025 38 / .35); background:oklch(89% .03 72 / .46); }
+    #relationship-review .branch-label { color:var(--rr-ruby); font-weight:800; } #relationship-review .dot { border-radius:0; transform:rotate(45deg); background:var(--rr-ruby); } #relationship-review .dot.inference { background:var(--rr-ochre); } #relationship-review .dot.lesson { background:var(--rr-moss); }
+    #relationship-review .fact-list { gap:14px; padding-inline-start:16px; line-height:2; font-size:.86rem; }
+    #relationship-review .merge { padding:0; min-height:48px; align-items:center; background:linear-gradient(90deg,transparent 0 48%, oklch(23% .025 38 / .2) 48% 52%,transparent 52%); color:var(--rr-ruby); font-size:1.8rem; }
+    #relationship-review .card.verdict { position:relative; padding:28px clamp(20px,4vw,44px); border:2px solid var(--rr-ink); border-radius:0; background:var(--rr-ink); color:var(--rr-paper); box-shadow:10px 10px 0 var(--rr-ochre); }
+    #relationship-review .card.verdict h3 { color:var(--rr-ochre); font-family:&#x27;Reem Kufi Fun&#x27;,sans-serif; font-size:2rem; } #relationship-review .uncertainty { color:oklch(87% .025 88); border-top:1px solid oklch(96% .018 88 / .28); padding-top:14px; }
+    #relationship-review .lesson-row { margin-top:22px; padding:22px 0; border-top:1px solid oklch(23% .025 38 / .3); border-bottom:1px solid oklch(23% .025 38 / .3); } #relationship-review .lesson-values strong { color:var(--rr-moss); }
+    #relationship-review .next-question { padding:28px 0; border-top:0; color:var(--rr-ruby); font-family:&#x27;Reem Kufi Fun&#x27;,sans-serif; font-size:clamp(1.35rem,2.5vw,1.85rem); line-height:1.4; }
+    #relationship-review .next-question label { color:var(--rr-moss); font-family:&#x27;Noto Kufi Arabic&#x27;,sans-serif; font-size:.68rem; font-weight:800; }
+    #relationship-review .timeline { padding-inline-start:0; } #relationship-review .timeline::before { display:none; }
+    #relationship-review .event { display:grid; grid-template-columns:82px 1fr; gap:18px; padding:25px 0; border-top:1px solid oklch(23% .025 38 / .3); } #relationship-review .event::before { position:static; content:counter(rr-events,decimal-leading-zero); counter-increment:rr-events; width:auto; height:auto; border-radius:0; background:none; color:var(--rr-ruby); font-family:&#x27;Reem Kufi Fun&#x27;,sans-serif; font-size:2rem; } #relationship-review .timeline { counter-reset:rr-events; }
+    #relationship-review .event-top h3 { font-family:&#x27;Reem Kufi Fun&#x27;,sans-serif; font-size:1.65rem; } #relationship-review .event-lines { font-size:.82rem; line-height:1.9; }
+    #relationship-review .criterion { padding:28px; background:oklch(89% .03 72 / .5); border:1px solid oklch(23% .025 38 / .22); } #relationship-review .criterion-line { border-bottom-color:oklch(23% .025 38 / .22); } #relationship-review .criterion-line label { color:var(--rr-ruby); }
+    #relationship-review .footer { border-top:2px solid var(--rr-ink); } #relationship-review .legend { font-size:.72rem; }
+    @keyframes rr-rise { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
+    @media (prefers-reduced-motion:reduce) { #relationship-review *, #relationship-review *::before, #relationship-review *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
+    @media(max-width:620px) { #relationship-review { padding:22px 16px 34px; } #relationship-review .intro { grid-template-columns:1fr; gap:4px; } #relationship-review .intro h2 { font-size:4.4rem; } #relationship-review .meta { max-width:none; } #relationship-review .start-grid { grid-template-columns:1fr; } #relationship-review .start-card + .start-card { border-inline-start:0; border-top:1px solid oklch(23% .025 38 / .35); } #relationship-review .start-card { min-height:0; } #relationship-review .branches { grid-template-columns:1fr; } #relationship-review .branch + .branch { border-inline-start:0; border-top:1px solid oklch(23% .025 38 / .35); } #relationship-review .event { grid-template-columns:54px 1fr; gap:10px; } }
   &lt;/style&gt;
 
   &lt;div class=&quot;intro&quot;&gt;
