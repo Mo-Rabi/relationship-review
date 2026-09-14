@@ -1209,6 +1209,39 @@ html&gt;body{padding:0}&lt;/style&gt;
     #relationship-review .criterion { padding:0; background:transparent; border:0; } #relationship-review .criterion-line { border-bottom-color:var(--border); } #relationship-review .criterion-line label { color:var(--foreground); }
     #relationship-review .footer { border-top:1px solid var(--border); }
     @media(max-width:620px) { #relationship-review .intro { display:grid; grid-template-columns:1fr; gap:6px; } #relationship-review .intro h2 { font-size:2.2rem; } #relationship-review .start-grid { grid-template-columns:1fr; } #relationship-review .start-card { min-height:84px; } #relationship-review .branches { grid-template-columns:1fr; gap:22px; } }
+
+    /* Product-style light surface */
+    #relationship-review { --rr-navy:#17134b; --rr-violet:#6b35f4; --rr-ink:#17134b; --rr-paper:#f8f8fc; --rr-ruby:#6b35f4; --rr-ochre:#ece9ff; --rr-moss:#74748b; max-width:1180px; margin:14px auto; padding:clamp(24px,5vw,72px); border-radius:42px; background:var(--rr-paper); color:var(--rr-ink); box-shadow:0 20px 70px rgb(14 10 62 / .15); }
+    #relationship-review .intro { justify-content:center; text-align:center; align-items:center; gap:10px; padding:20px 0 16px; border:0; }
+    #relationship-review .intro h2 { font-size:clamp(2.7rem,7vw,5.8rem); font-weight:500; color:var(--rr-navy); }
+    #relationship-review .meta { max-width:28rem; color:#85859b; }
+    #relationship-review .start-here { position:relative; margin:22px 0; padding:clamp(28px,5vw,56px) clamp(18px,4vw,52px); overflow:hidden; border:1px solid #e6e5ef; border-radius:30px; background:radial-gradient(circle at 50% 110%, transparent 0 22%, #ededf4 22.2% 22.6%, transparent 22.8% 40%, #ededf4 40.2% 40.6%, transparent 40.8% 58%, #ededf4 58.2% 58.6%, transparent 58.8%); }
+    #relationship-review .start-here h3 { position:relative; z-index:1; text-align:center; font-size:clamp(1.5rem,3vw,2.25rem); font-weight:500; }
+    #relationship-review .start-grid { position:relative; z-index:1; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    #relationship-review .start-card { min-height:148px; border:1px solid #e0dfea; border-radius:22px; background:#fff; box-shadow:0 10px 22px rgb(30 23 100 / .05); color:var(--rr-navy); }
+    #relationship-review .start-card + .start-card { border:1px solid #e0dfea; }
+    #relationship-review .start-card::before { color:var(--rr-violet); }
+    #relationship-review .start-card:hover, #relationship-review .start-card:focus-visible { background:var(--rr-violet); border-color:var(--rr-violet); color:white; transform:translateY(-5px); box-shadow:0 18px 36px rgb(107 53 244 / .25); }
+    #relationship-review .nav.nav-pills { justify-content:center; background:var(--rr-paper); border:0; }
+    #relationship-review .nav.nav-pills .nav-link { color:#77768c; }
+    #relationship-review .nav.nav-pills .nav-link.active { background:var(--rr-navy); color:#fff; }
+    #relationship-review .section-kicker { text-align:center; color:#77768c; }
+    #relationship-review .viz-controls { justify-content:center; }
+    #relationship-review .form-select { min-width:min(100%,400px); border-color:#deddea; background:#fff; color:var(--rr-navy); }
+    #relationship-review .topic-nav { justify-content:center; }
+    #relationship-review .topic-nav .btn { background:#f0eff7; color:var(--rr-navy); }
+    #relationship-review .topic-nav .btn.is-active, #relationship-review .topic-nav .btn:hover, #relationship-review .topic-nav .btn:focus-visible { background:var(--rr-violet); color:#fff; }
+    #relationship-review .topic-head { justify-content:center; text-align:center; }
+    #relationship-review .topic-head h3 { color:var(--rr-navy); }
+    #relationship-review .viz-badge { background:#ece9ff; color:var(--rr-violet); }
+    #relationship-review .branch { padding:24px; border:1px solid #e7e5ef; border-radius:22px; background:#fff; }
+    #relationship-review .branch + .branch { border:1px solid #e7e5ef; background:#fff; }
+    #relationship-review .branch-label { color:var(--rr-navy); }
+    #relationship-review .card.verdict { border:0; border-radius:24px; background:var(--rr-navy); color:#fff; box-shadow:none; }
+    #relationship-review .card.verdict h3 { color:#fff; } #relationship-review .uncertainty { color:#d8d7ea; border-color:rgb(255 255 255 / .2); }
+    #relationship-review .lesson-row { border-color:#e3e1eb; } #relationship-review .lesson-values strong, #relationship-review .next-question { color:var(--rr-navy); }
+    #relationship-review .criterion { padding:24px; border:1px solid #e7e5ef; border-radius:24px; background:#fff; }
+    @media(max-width:620px) { #relationship-review { margin:0; border-radius:0; padding:28px 18px; } #relationship-review .start-grid { grid-template-columns:1fr; } #relationship-review .start-card { min-height:100px; } }
   &lt;/style&gt;
 
   &lt;div class=&quot;intro&quot;&gt;
