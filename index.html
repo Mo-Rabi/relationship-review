@@ -1037,7 +1037,7 @@ html&gt;body{padding:0}&lt;/style&gt;
 &lt;body&gt;
 &lt;div id=&quot;relationship-review&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;
   &lt;style&gt;
-    @import url(&#x27;https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;700;800&amp;family=Reem+Kufi+Fun:wght@500;600;700&amp;display=swap&#x27;);
+    @import url(&#x27;https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;700&amp;family=Noto+Kufi+Arabic:wght@400;500;700&amp;display=swap&#x27;);
     #relationship-review { color:var(--foreground); }
     #relationship-review .intro { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:8px; }
     #relationship-review .intro h2 { margin:0; }
@@ -1163,6 +1163,52 @@ html&gt;body{padding:0}&lt;/style&gt;
     @keyframes rr-rise { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
     @media (prefers-reduced-motion:reduce) { #relationship-review *, #relationship-review *::before, #relationship-review *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
     @media(max-width:620px) { #relationship-review { padding:22px 16px 34px; } #relationship-review .intro { grid-template-columns:1fr; gap:4px; } #relationship-review .intro h2 { font-size:4.4rem; } #relationship-review .meta { max-width:none; } #relationship-review .start-grid { grid-template-columns:1fr; } #relationship-review .start-card + .start-card { border-inline-start:0; border-top:1px solid oklch(23% .025 38 / .35); } #relationship-review .start-card { min-height:0; } #relationship-review .branches { grid-template-columns:1fr; } #relationship-review .branch + .branch { border-inline-start:0; border-top:1px solid oklch(23% .025 38 / .35); } #relationship-review .event { grid-template-columns:54px 1fr; gap:10px; } }
+
+    /* Calm, scan-first override */
+    #relationship-review { --rr-ink:var(--foreground); --rr-paper:var(--background); --rr-ruby:var(--primary); --rr-ochre:var(--accent); --rr-moss:var(--muted-foreground); max-width:900px; padding:clamp(20px,4vw,44px); background:var(--background); font-family:&#x27;Alexandria&#x27;,&#x27;Noto Kufi Arabic&#x27;,sans-serif; }
+    #relationship-review::before, #relationship-review::after { content:none; }
+    #relationship-review .intro { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding:0 0 22px; border-bottom:1px solid var(--border); }
+    #relationship-review .intro::before { content:none; }
+    #relationship-review .intro h2 { font-family:&#x27;Alexandria&#x27;,&#x27;Noto Kufi Arabic&#x27;,sans-serif; font-size:clamp(2rem,5vw,3.5rem); line-height:1.15; letter-spacing:-.04em; transform:none; }
+    #relationship-review .intro h2::after { content:none; }
+    #relationship-review .meta { max-width:18rem; padding:0; color:var(--muted-foreground); font-size:.76rem; font-weight:500; line-height:1.8; }
+    #relationship-review .start-here { margin:0; padding:20px 0; border-bottom:1px solid var(--border); }
+    #relationship-review .start-here h3 { margin:0 0 12px; font-family:inherit; font-size:1rem; font-weight:700; }
+    #relationship-review .start-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; border:0; }
+    #relationship-review .start-card { min-height:112px; padding:14px; border:1px solid var(--border); border-radius:10px; background:transparent; color:var(--foreground); box-shadow:none; text-align:right; transition:background .18s ease, border-color .18s ease, transform .18s ease; }
+    #relationship-review .start-card + .start-card { border:1px solid var(--border); }
+    #relationship-review .start-card::before { margin-bottom:8px; color:var(--muted-foreground); font-family:inherit; font-size:.68rem; font-weight:500; }
+    #relationship-review .start-card strong { font-size:.82rem; } #relationship-review .start-card .text-small { color:var(--muted-foreground); font-size:.66rem; line-height:1.7; }
+    #relationship-review .start-card:hover, #relationship-review .start-card:focus-visible { background:var(--accent); color:var(--accent-foreground); border-color:var(--accent); transform:translateY(-2px); }
+    #relationship-review .start-card:hover .text-small, #relationship-review .start-card:focus-visible .text-small { color:var(--accent-foreground); }
+    #relationship-review .nav.nav-pills { margin:0; padding:14px 0; background:color-mix(in srgb,var(--background) 93%,transparent); border-bottom:1px solid var(--border); backdrop-filter:blur(8px); }
+    #relationship-review .nav.nav-pills .nav-link { font-size:.73rem; font-weight:500; color:var(--muted-foreground); }
+    #relationship-review .nav.nav-pills .nav-link.active { background:var(--primary); color:var(--primary-foreground); }
+    #relationship-review .panel-content { padding-top:24px; animation:rr-rise .26s ease-out both; }
+    #relationship-review .section-kicker { margin:0 0 16px; color:var(--muted-foreground); font-weight:400; line-height:1.9; }
+    #relationship-review .viz-controls { padding:0; background:transparent; border:0; }
+    #relationship-review .form-select { min-height:44px; border-radius:8px; border-color:var(--input); background:var(--background); color:var(--foreground); font-family:inherit; font-weight:500; }
+    #relationship-review .topic-nav { gap:6px; margin:14px 0 22px; }
+    #relationship-review .topic-nav .btn { border-radius:999px; color:var(--muted-foreground); font-size:.68rem; font-weight:500; }
+    #relationship-review .topic-nav .btn.is-active, #relationship-review .topic-nav .btn:hover, #relationship-review .topic-nav .btn:focus-visible { background:var(--accent); color:var(--accent-foreground); }
+    #relationship-review .topic-head { margin:28px 0 18px; }
+    #relationship-review .topic-head h3 { font-family:inherit; font-size:1.5rem; font-weight:700; line-height:1.35; }
+    #relationship-review .viz-badge { border-radius:999px; background:var(--accent); color:var(--accent-foreground); font-weight:500; transform:none; }
+    #relationship-review .branches { gap:16px; border-top:0; }
+    #relationship-review .branch { padding:0; } #relationship-review .branch + .branch { border-inline-start:0; border-top:0; background:transparent; }
+    #relationship-review .branch-label { color:var(--foreground); font-weight:700; } #relationship-review .dot { width:8px; height:8px; border-radius:50%; transform:none; background:var(--viz-series-1); } #relationship-review .dot.inference { background:var(--viz-series-2); } #relationship-review .dot.lesson { background:var(--viz-series-3); }
+    #relationship-review .fact-list { gap:10px; padding-inline-start:18px; line-height:1.9; font-size:.78rem; }
+    #relationship-review .merge { display:none; }
+    #relationship-review .card.verdict { padding:20px; border:1px solid var(--border); border-radius:10px; background:var(--card); color:var(--card-foreground); box-shadow:none; }
+    #relationship-review .card.verdict h3 { color:var(--card-foreground); font-family:inherit; font-size:1rem; font-weight:700; } #relationship-review .uncertainty { color:var(--muted-foreground); border-top:1px solid var(--border); padding-top:12px; }
+    #relationship-review .lesson-row { margin-top:18px; padding:16px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); } #relationship-review .lesson-values strong { color:var(--foreground); }
+    #relationship-review .next-question { padding:18px 0 0; color:var(--foreground); font-family:inherit; font-size:1rem; line-height:1.8; } #relationship-review .next-question label { color:var(--muted-foreground); font-family:inherit; font-size:.68rem; font-weight:500; }
+    #relationship-review .timeline { padding-inline-start:20px; } #relationship-review .timeline::before { display:block; }
+    #relationship-review .event { display:block; padding:0 0 22px; border:0; } #relationship-review .event::before { content:&quot;&quot;; position:absolute; inset-inline-start:-24px; top:7px; width:9px; height:9px; border-radius:50%; background:var(--viz-series-1); font-size:0; } #relationship-review .timeline { counter-reset:none; }
+    #relationship-review .event-top h3 { font-family:inherit; font-size:1rem; font-weight:700; } #relationship-review .event-lines { font-size:.76rem; line-height:1.8; }
+    #relationship-review .criterion { padding:0; background:transparent; border:0; } #relationship-review .criterion-line { border-bottom-color:var(--border); } #relationship-review .criterion-line label { color:var(--foreground); }
+    #relationship-review .footer { border-top:1px solid var(--border); }
+    @media(max-width:620px) { #relationship-review .intro { display:grid; grid-template-columns:1fr; gap:6px; } #relationship-review .intro h2 { font-size:2.2rem; } #relationship-review .start-grid { grid-template-columns:1fr; } #relationship-review .start-card { min-height:84px; } #relationship-review .branches { grid-template-columns:1fr; gap:22px; } }
   &lt;/style&gt;
 
   &lt;div class=&quot;intro&quot;&gt;
@@ -1364,6 +1410,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     setList(&#x27;rr-facts&#x27;,t.facts);setList(&#x27;rr-claude&#x27;,t.claude);
     setText(&#x27;rr-verdict&#x27;,t.verdict);setText(&#x27;rr-unknown&#x27;,t.unknown);
     setText(&#x27;rr-lesson&#x27;,t.lesson);setText(&#x27;rr-question&#x27;,t.question);
+    root.querySelectorAll(&#x27;[data-topic]&#x27;).forEach(button=&gt;button.classList.toggle(&#x27;is-active&#x27;,button.dataset.topic===event.target.value));
   });
   el(&#x27;rr-criterion&#x27;).addEventListener(&#x27;change&#x27;,event=&gt;{
     const c=criteria[event.target.value];
