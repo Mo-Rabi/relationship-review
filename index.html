@@ -1310,6 +1310,8 @@ html&gt;body{padding:0}&lt;/style&gt;
     setText(&#x27;rr-ask&#x27;,c.ask);setText(&#x27;rr-evidence&#x27;,c.evidence);
     setText(&#x27;rr-insufficient&#x27;,c.insufficient);setText(&#x27;rr-own&#x27;,c.own);
   });
+  el(&#x27;rr-topic&#x27;).dispatchEvent(new Event(&#x27;change&#x27;));
+  el(&#x27;rr-criterion&#x27;).dispatchEvent(new Event(&#x27;change&#x27;));
 })();
 &lt;/script&gt;
 
